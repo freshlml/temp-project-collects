@@ -2,7 +2,7 @@ server:
   port: 8081
 spring:
   application:
-    name: temp-project-test
+    name: temp-project-yui
   datasource:
     url: jdbc:mysql://127.0.0.1:3306/test?characterEncoding=UTF-8&connectionTimeZone=Asia/Shanghai
     type: com.alibaba.druid.pool.DruidDataSource
@@ -30,7 +30,7 @@ logging:
     org.springframework.jdbc.datasource: debug
 
 mybatis:
-  mapperLocations: classpath*:com/temp/test/**/*.Mapper.xml
+  mapperLocations: classpath*:com/temp/yui/**/*.Mapper.xml
   configuration:
     default-enum-type-handler: com.fresh.xy.mb.core.EnumTypeHandler
 

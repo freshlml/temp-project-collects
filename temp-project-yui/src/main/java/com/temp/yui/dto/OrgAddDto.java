@@ -1,4 +1,4 @@
-package com.temp.test.dto;
+package com.temp.yui.dto;
 
 import lombok.Getter;
 import lombok.Setter;

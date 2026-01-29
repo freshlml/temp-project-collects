@@ -9,7 +9,7 @@
     </parent>
     <modules>
         <module>temp-project-demo</module>
-        <module>temp-project-test</module>
+        <module>temp-project-yui</module>
     </modules>
 
     <groupId>com.temp</groupId>

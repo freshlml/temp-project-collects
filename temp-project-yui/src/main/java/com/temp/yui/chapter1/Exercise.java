@@ -1,4 +1,4 @@
-package com.temp.test.chapter1;
+package com.temp.yui.chapter1;
 
 public class Exercise {
 

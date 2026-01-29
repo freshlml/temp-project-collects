@@ -1,4 +1,4 @@
-package com.temp.test.vo;
+package com.temp.yui.vo;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Getter;

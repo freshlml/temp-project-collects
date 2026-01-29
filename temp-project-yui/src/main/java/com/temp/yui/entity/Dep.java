@@ -1,7 +1,7 @@
-package com.temp.test.entity;
+package com.temp.yui.entity;
 
 import com.fresh.xy.common.entity.BaseEntity;
-import com.temp.test.enums.DepType;
+import com.temp.yui.enums.DepType;
 import lombok.Getter;
 import lombok.Setter;
 

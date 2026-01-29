@@ -1,10 +1,10 @@
-package com.temp.test.service.impl;
+package com.temp.yui.service.impl;
 
 
 import com.fresh.xy.mb.core.BaseServiceImpl;
-import com.temp.test.entity.Dep;
-import com.temp.test.mapper.DepMapper;
-import com.temp.test.service.DepService;
+import com.temp.yui.entity.Dep;
+import com.temp.yui.mapper.DepMapper;
+import com.temp.yui.service.DepService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

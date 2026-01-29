@@ -1,4 +1,4 @@
-package com.temp.test.entity;
+package com.temp.yui.entity;
 
 import com.fresh.xy.common.entity.BaseEntity;
 

@@ -1,11 +1,11 @@
-package com.temp.test.service.impl;
+package com.temp.yui.service.impl;
 
 
 import com.fresh.xy.mb.core.BaseServiceImpl;
-import com.temp.test.entity.Org;
-import com.temp.test.mapper.DepMapper;
-import com.temp.test.mapper.OrgMapper;
-import com.temp.test.service.OrgService;
+import com.temp.yui.entity.Org;
+import com.temp.yui.mapper.DepMapper;
+import com.temp.yui.mapper.OrgMapper;
+import com.temp.yui.service.OrgService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

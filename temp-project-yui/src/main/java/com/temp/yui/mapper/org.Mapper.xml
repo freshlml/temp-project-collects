@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="com.temp.test.mapper.OrgMapper">
+<mapper namespace="com.temp.yui.mapper.OrgMapper">
 
     <insert id="insert">
         insert into `org` (
@@ -32,7 +32,7 @@
         where id = #{id, javaType=long}
     </update>
 
-    <select id="selectById" resultType="com.temp.test.entity.Org">
+    <select id="selectById" resultType="com.temp.yui.entity.Org">
         select id, org_name as orgName, org_commission_money as orgCommissionMoney,
                create_time as createTime, modify_time as modifyTime
         from `org`

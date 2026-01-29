@@ -1,13 +1,13 @@
-package com.temp.test.controller;
+package com.temp.yui.controller;
 
 import com.fresh.common.result.JsonResult;
 import com.fresh.common.utils.AssertUtils;
 import com.fresh.xy.mb.utils.IdGenerator;
-import com.temp.test.dto.OrgAddDto;
-import com.temp.test.dto.OrgUpdateDto;
-import com.temp.test.entity.Org;
-import com.temp.test.service.OrgService;
-import com.temp.test.vo.OrgVo;
+import com.temp.yui.dto.OrgAddDto;
+import com.temp.yui.dto.OrgUpdateDto;
+import com.temp.yui.entity.Org;
+import com.temp.yui.service.OrgService;
+import com.temp.yui.vo.OrgVo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

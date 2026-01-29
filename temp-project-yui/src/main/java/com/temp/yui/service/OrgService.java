@@ -1,4 +1,4 @@
-package com.temp.test.service;
+package com.temp.yui.service;
 
 import com.fresh.xy.common.entity.BaseEntity;
 import com.fresh.xy.mb.core.BaseService;

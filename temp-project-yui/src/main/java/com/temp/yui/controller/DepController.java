@@ -1,4 +1,4 @@
-package com.temp.test.controller;
+package com.temp.yui.controller;
 
 import com.fresh.common.result.JsonResult;
 import com.fresh.common.result.PageJsonResultVo;
@@ -6,12 +6,12 @@ import com.fresh.common.utils.AssertUtils;
 import com.fresh.xy.mb.core.Page;
 import com.fresh.xy.mb.utils.IdGenerator;
 import com.fresh.xy.mb.utils.PageUtils;
-import com.temp.test.dto.DepAddDto;
-import com.temp.test.dto.DepPageDto;
-import com.temp.test.dto.DepUpdateDto;
-import com.temp.test.entity.Dep;
-import com.temp.test.service.DepService;
-import com.temp.test.vo.DepVo;
+import com.temp.yui.dto.DepAddDto;
+import com.temp.yui.dto.DepPageDto;
+import com.temp.yui.dto.DepUpdateDto;
+import com.temp.yui.entity.Dep;
+import com.temp.yui.service.DepService;
+import com.temp.yui.vo.DepVo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -97,7 +97,7 @@ public class DepController {
         dep.setOrgId(depPageDto.getOrgId());
         dep.setDepType(depPageDto.getDepType());
         Page<Dep> page = depService.pageByEntity(PageUtils.mybatisPage(depPageDto), dep);
-        //page = depService.pageByEntityForTest(PageUtils.mybatisPage(depPageDto));
+        //page = depService.pageByEntityForyui(PageUtils.mybatisPage(depPageDto));
 
         return JsonResult.buildSuccessResult(PageUtils.pageJsonResultVo(page));
     }

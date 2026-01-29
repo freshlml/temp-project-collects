@@ -1,4 +1,4 @@
-package com.temp.test.hgc;
+package com.temp.yui.hgc;
 
 public class Hugaochao {
 

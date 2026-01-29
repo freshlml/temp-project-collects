@@ -1,7 +1,7 @@
-package com.temp.test.mapper;
+package com.temp.yui.mapper;
 
 import com.fresh.xy.mb.core.BaseMapper;
-import com.temp.test.entity.Dep;
+import com.temp.yui.entity.Dep;
 import org.apache.ibatis.annotations.Mapper;
 
 @Mapper

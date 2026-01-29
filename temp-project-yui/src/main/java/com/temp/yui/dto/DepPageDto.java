@@ -1,7 +1,7 @@
-package com.temp.test.dto;
+package com.temp.yui.dto;
 
 import com.fresh.xy.common.dto.PageDto;
-import com.temp.test.enums.DepType;
+import com.temp.yui.enums.DepType;
 import lombok.Data;
 
 @Data

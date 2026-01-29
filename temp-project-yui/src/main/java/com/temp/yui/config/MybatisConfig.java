@@ -1,4 +1,4 @@
-package com.temp.test.config;
+package com.temp.yui.config;
 
 import com.fresh.xy.mb.core.PageInterceptor;
 import org.mybatis.spring.annotation.MapperScan;
@@ -6,7 +6,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
-@MapperScan("com.temp.test.**.mapper")  //classpath*:com/temp/test/**/mapper/**/*.class
+@MapperScan("com.temp.yui.**.mapper")  //classpath*:com/temp/yui/**/mapper/**/*.class
 public class MybatisConfig {
 
     @Bean

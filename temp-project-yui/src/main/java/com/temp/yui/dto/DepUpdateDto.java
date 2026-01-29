@@ -1,6 +1,6 @@
-package com.temp.test.dto;
+package com.temp.yui.dto;
 
-import com.temp.test.enums.DepType;
+import com.temp.yui.enums.DepType;
 import lombok.Getter;
 import lombok.Setter;
 

@@ -1,4 +1,4 @@
-package com.temp.test.enums;
+package com.temp.yui.enums;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;

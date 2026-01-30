@@ -35,19 +35,7 @@ public class Application {
         System.out.println(nn);
 
     }
-
-    private int calDatesBetween(int startDate, int endDate) {
-        return endDate - startDate;
-    }
-
-
-    //计算两个日期之间的天数差值，参数为 LocalDate 类型
-    private static long calDatesBetween(LocalDate startDate, LocalDate endDate) {
-        if (startDate == null || endDate == null) {
-            throw new IllegalArgumentException("startDate and endDate must not be null");
-        }
-        return ChronoUnit.DAYS.between(startDate, endDate);
-    }
+    
     public static void test_cls() {
         ClassLoader classLoader = Thread.currentThread().getContextClassLoader();
 

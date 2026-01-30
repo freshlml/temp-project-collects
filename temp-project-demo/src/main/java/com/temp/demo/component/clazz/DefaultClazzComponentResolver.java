@@ -1,7 +1,7 @@
-package com.temp.demo.pt1.clazz;
+package com.temp.demo.component.clazz;
 
-import com.temp.demo.pt1.AbstractComponentResolver;
-import com.temp.demo.pt1.Component;
+import com.temp.demo.component.AbstractComponentResolver;
+import com.temp.demo.component.Component;
 
 import java.util.ArrayList;
 import java.util.List;

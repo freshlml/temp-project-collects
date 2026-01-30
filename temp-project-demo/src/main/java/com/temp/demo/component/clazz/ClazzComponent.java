@@ -1,6 +1,6 @@
-package com.temp.demo.pt1.clazz;
+package com.temp.demo.component.clazz;
 
-import com.temp.demo.pt1.AbstractComponent;
+import com.temp.demo.component.AbstractComponent;
 
 public class ClazzComponent<T> extends AbstractComponent<Class<T>> {
 

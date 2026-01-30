@@ -1,6 +1,6 @@
-package com.temp.demo.pt1.clazz;
+package com.temp.demo.component.clazz;
 
-import com.temp.demo.pt1.ComponentResolver;
+import com.temp.demo.component.ComponentResolver;
 
 import java.util.List;
 

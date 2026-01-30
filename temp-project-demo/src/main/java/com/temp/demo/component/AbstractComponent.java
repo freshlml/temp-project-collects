@@ -1,4 +1,4 @@
-package com.temp.demo.pt1;
+package com.temp.demo.component;
 
 import com.fresh.common.utils.AssertUtils;
 

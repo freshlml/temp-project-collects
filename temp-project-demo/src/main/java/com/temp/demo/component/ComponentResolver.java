@@ -1,4 +1,4 @@
-package com.temp.demo.pt1;
+package com.temp.demo.component;
 
 import java.util.List;
 

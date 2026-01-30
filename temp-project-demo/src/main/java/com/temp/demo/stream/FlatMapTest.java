@@ -7,7 +7,7 @@ import java.util.stream.Collectors;
 
 public class FlatTest {
 
-    public static void main(String argv[]) {
+    public static void main(String[] argv) {
 
         List<List<Pojo>> flatPojos = new ArrayList<>();
         List<Pojo> l1 = new ArrayList<>();
@@ -26,11 +26,16 @@ public class FlatTest {
         flatPojos.add(l2);
         flatPojos.add(l3);
 
-        flatPojos.stream().map(lst -> lst.get(0));
+        List<Pojo> nestedLstOne = flatPojos.stream().map(lst -> lst.get(0)).collect(Collectors.toList());
+        System.out.println(nestedLstOne.get(1));  //a a.md
 
-        List<Pojo> result = flatPojos.stream().filter(lst -> lst.get(0).s == "1").flatMap(lst -> lst.stream()).distinct().collect(Collectors.toList());
+        List<Pojo> result = flatPojos.stream()
+                .filter(lst -> lst.get(0).s.equals("1"))
+                .flatMap(lst -> lst.stream())
+                .distinct()
+                .collect(Collectors.toList());
+
         System.out.println(result);
-
     }
 
     static class Pojo {
@@ -42,9 +47,7 @@ public class FlatTest {
 
         @Override
         public String toString() {
-            return "Pojo{" +
-                    "s='" + s + '\'' +
-                    '}';
+            return "Pojo{ " + s + " }";
         }
 
         @Override

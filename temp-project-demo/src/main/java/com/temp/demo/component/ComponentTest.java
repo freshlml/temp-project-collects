@@ -1,4 +1,4 @@
-package com.temp.demo.pt3;
+package com.temp.demo.component;
 
 
 import com.temp.demo.component.clazz.ClazzComponent;
@@ -28,6 +28,7 @@ public class ComponentTest {
 
         DefaultClazzComponentResolver<Integer> defaultClazzComponentResolver = new DefaultClazzComponentResolver<>(clazzComponent);
         List<ClazzComponent<?>> results = defaultClazzComponentResolver.getAllSuperClass();
+
         Class<?> clazz1 = results.get(0).getEntity();
         int[] a1 = new int[1];
         int[] a2 = new int[2];

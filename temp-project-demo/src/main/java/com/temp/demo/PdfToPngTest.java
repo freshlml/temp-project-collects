@@ -26,6 +26,8 @@ public class PdfToPngTest {
     }
 
     static void pdfToImage(InputStream inputStream, File imgFile) {
+        List<File> fileList = new ArrayList<>();
+
         try {
             long old = System.currentTimeMillis();
             System.out.println("begin..............");
@@ -34,13 +36,12 @@ public class PdfToPngTest {
             Resolution resolution = new Resolution(80);
             JpegDevice jpegDevice = new JpegDevice(resolution);
             List<BufferedImage> imageList = new ArrayList<BufferedImage>();
-            List<File> fileList = new ArrayList<>();
 
             for (int index = 1; index <= pdfDocument.getPages().size(); index++) {
                 //System.out.println(System.getProperty("java.io.tmpdir"));
                 //C:\Users\DELL\AppData\Local\Temp\
                 //File file = File.createTempFile("tempFile", ".png");
-                File file = Files.createTempFile(FileSystems.getDefault().getPath(path, ""), "tempFile", ".png").toFile();
+                File file = Files.createTempFile(FileSystems.getDefault().getPath(path), "tempFile", ".png").toFile();
                 FileOutputStream fileOS = new FileOutputStream(file);
 
                 jpegDevice.process(pdfDocument.getPages().get_Item(index), fileOS);
@@ -54,14 +55,14 @@ public class PdfToPngTest {
             long now = System.currentTimeMillis();
             System.out.println("end..............\n共耗时：" + ((now - old) / 1000.0) + "秒");
 
-            //删除临时文件
-            /*for (File f : fileList) {
-                f.delete();
-            }*/
         } catch (Exception e) {
             e.printStackTrace();
+        } finally {
+            //删除临时文件
+            for (File f : fileList) {
+                f.delete();
+            }
         }
-
     }
 
     static BufferedImage mergeImage(boolean isHorizontal, List<BufferedImage> imgs) {

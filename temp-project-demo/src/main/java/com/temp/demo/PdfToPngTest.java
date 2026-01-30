@@ -4,32 +4,28 @@ package com.temp.demo;
 import com.aspose.pdf.Document;
 import com.aspose.pdf.devices.JpegDevice;
 import com.aspose.pdf.devices.Resolution;
-
 import javax.imageio.ImageIO;
 import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.FileOutputStream;
-import java.io.IOException;
 import java.io.InputStream;
-import java.util.Date;
+import java.nio.file.FileSystems;
+import java.nio.file.Files;
 import java.util.ArrayList;
 import java.util.List;
 
 public class PdfToPngTest {
+    static String path = "F:\\temp";
 
+    public static void main(String[] argv) {
+        InputStream pdfIs = PdfToPngTest.class.getClassLoader().getResourceAsStream("memo-493.pdf");
 
-    public static void main(Date argv[]) {
-
-        InputStream pdfIs = PdfToPngTest.class.getClassLoader().getResourceAsStream("1482327a44fa4cd9c14a2e727e46aee7.pdf");
-        System.out.println(pdfIs);
-        File imgFile = new File("D:\\org.example.ft.temp\\1.png");
+        File imgFile = new File(path + "\\1.png");
         pdfToImage(pdfIs, imgFile);
-
-
     }
 
-    public static void pdfToImage(InputStream inputStream, File imgFile) {
+    static void pdfToImage(InputStream inputStream, File imgFile) {
         try {
             long old = System.currentTimeMillis();
             System.out.println("begin..............");
@@ -39,30 +35,36 @@ public class PdfToPngTest {
             JpegDevice jpegDevice = new JpegDevice(resolution);
             List<BufferedImage> imageList = new ArrayList<BufferedImage>();
             List<File> fileList = new ArrayList<>();
+
             for (int index = 1; index <= pdfDocument.getPages().size(); index++) {
-                File file = File.createTempFile("tempFile", ".png");
+                //System.out.println(System.getProperty("java.io.tmpdir"));
+                //C:\Users\DELL\AppData\Local\Temp\
+                //File file = File.createTempFile("tempFile", ".png");
+                File file = Files.createTempFile(FileSystems.getDefault().getPath(path, ""), "tempFile", ".png").toFile();
                 FileOutputStream fileOS = new FileOutputStream(file);
+
                 jpegDevice.process(pdfDocument.getPages().get_Item(index), fileOS);
                 fileOS.close();
                 imageList.add(ImageIO.read(file));
                 fileList.add(file);
             }
-            //临时文件删除
+
             BufferedImage mergeImage = mergeImage(false, imageList);
             ImageIO.write(mergeImage, "png", imgFile);
             long now = System.currentTimeMillis();
-            System.out.println("共耗时：" + ((now - old) / 1000.0) + "秒");
+            System.out.println("end..............\n共耗时：" + ((now - old) / 1000.0) + "秒");
+
             //删除临时文件
-            for (File f : fileList) {
+            /*for (File f : fileList) {
                 f.delete();
-            }
+            }*/
         } catch (Exception e) {
             e.printStackTrace();
         }
 
     }
 
-    public static BufferedImage mergeImage(boolean isHorizontal, List<BufferedImage> imgs) throws IOException {
+    static BufferedImage mergeImage(boolean isHorizontal, List<BufferedImage> imgs) {
         // 生成新图片
         BufferedImage destImage = null;
         // 计算新图片的长和高
@@ -86,6 +88,7 @@ public class PdfToPngTest {
                 allhMax = img.getHeight();
             }
         }
+
         // 创建新图片
         if (isHorizontal) {
             destImage = new BufferedImage(allw, allhMax, BufferedImage.TYPE_INT_RGB);
@@ -120,9 +123,6 @@ public class PdfToPngTest {
             wy += h1 + 5;
         }
 
-
         return destImage;
     }
-
-
 }

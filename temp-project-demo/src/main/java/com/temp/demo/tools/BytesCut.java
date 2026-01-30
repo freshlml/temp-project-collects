@@ -1,4 +1,4 @@
-package com.temp.demo;
+package com.temp.demo.tools;
 
 
 import java.util.Date;
@@ -10,7 +10,7 @@ import java.util.stream.IntStream;
 
 
 
-public class T {
+public class BytesCut {
 
     public static <E> void main(Date[] argv) {
         int l = 0x9e3779b9;

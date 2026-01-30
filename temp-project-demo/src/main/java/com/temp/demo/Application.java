@@ -35,7 +35,7 @@ public class Application {
         System.out.println(nn);
 
     }
-    
+
     public static void test_cls() {
         ClassLoader classLoader = Thread.currentThread().getContextClassLoader();
 

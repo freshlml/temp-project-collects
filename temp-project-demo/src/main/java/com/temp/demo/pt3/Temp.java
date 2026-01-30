@@ -1,11 +1,8 @@
 package com.temp.demo.pt3;
 
-import sun.reflect.Reflection;
-
 import java.util.*;
-import java.util.concurrent.atomic.AtomicIntegerFieldUpdater;
 
-public class Temp2 {
+public class Temp {
     private static final ThreadGroup qopGroup = new ThreadGroup("qop");
     static {
         qopGroup.setDaemon(true);

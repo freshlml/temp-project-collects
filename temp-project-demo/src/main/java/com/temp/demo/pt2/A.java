@@ -1,45 +1,99 @@
 package com.temp.demo.pt2;
 
+
 public class A {
 
     public static void main(String[] args) {
-        int[] a = {1, 3, 543, 1, 2, 4};
-        ArrTraversal.of(a).forEach(ArrHandler::print);
-        insert_sort(a);
-        ArrTraversal.of(a).forEach(ArrHandler::print);
+        int[] a = {1, 2, -11, 123, 1, 3, -122};
 
-        int[] b = {-1, 123, -123, 231123213, 11, -2};
-        ArrTraversal.of(b).forEach(ArrHandler::print);
-        bubble_sort(b);
-        ArrTraversal.of(b).forEach(ArrPosHandler.of(2)::print);
+        /*insert_sort(a);
+        ArrTraversal.of(a).forEach(ArrHandler::print);*/
+
+        /*System.out.println("$##################");
+        merge_sort(a);
+        ArrTraversal.of(a).forEach(ArrHandler::print);*/
+
+        System.out.println(AA.a);
+        System.out.println(BB.a);
+        System.out.println(BB.b);
+        System.out.println(AA.b);
     }
 
-    static void insert_sort(int[] a) {
-        if(a == null || a.length == 0 || a.length == 1) return ;
+    static class AA {
+        static int b = BB.b;
+        static int a = 1;
+    }
+    static class BB {
+        static int a = AA.a;
+        static int b = 2;
+    }
 
-        for(int i=1; i < a.length; i++) {
-            int k = a[i];
-            int j = i - 1;
+    static void blMax(int[] a) {
 
-            while (j >= 0 && a[j] > k) {
-                a[j + 1] = a[j];
-                j--;
+        int result = a[0];
+        for(int i=0; i < a.length; i++) {
+            int accum = 0;
+            for(int j=i; j < a.length; j++) {
+                accum += a[j];
+                if(accum > result) {
+                    result = accum;
+                }
             }
-            a[j + 1] = k;
+        }
+
+
+    }
+
+
+    static void merge_sort(int[] a) {
+        if(a == null) return;
+        merge_sort(a, 0, a.length);
+    }
+
+    static void merge_sort(int[] a, int begin, int end) {
+        //assert a != null
+        int n = end - begin;
+        if(n <= 1) return;
+
+        int mi = begin + n/2;
+        merge_sort(a, begin, mi);
+        merge_sort(a, mi, end);
+
+        merge(a, begin, mi, end);
+    }
+
+    static void merge(int[] a, int p, int q, int r) {
+        //assert a != null
+        //assert 0 <= p <= q <= r <= a.length
+        int[] left = new int[q-p];   //q-p may 0
+        System.arraycopy(a, p, left, 0, left.length);
+        int[] right = new int[r-q];  //r-q may 0
+        System.arraycopy(a, q, right, 0, right.length);
+
+        for(int k=p, i=0, j=0; k < r; k++) {
+
+            if(j >= right.length || (i < left.length && left[i] <= right[j])) {
+                a[k] = left[i];
+                i++;
+            } else {
+                a[k] = right[j];
+                j++;
+            }
         }
     }
 
-    static void bubble_sort(int[] a) {
-        if(a == null) return ;
 
-        for(int i=a.length-1; i > 0; i--) {
-            for(int j=0; j < i; j++) {
-                if(a[j] > a[j + 1]) {
-                    int k = a[j];
-                    a[j] = a[j + 1];
-                    a[j + 1] = k;
-                }
+    static void insert_sort(int[] a) {
+        if(a == null) return;
+
+        for(int i=1; i < a.length; i++) {
+            int k = a[i];
+            int j = i-1;
+            while(j >= 0 && a[j] > k) {
+                a[j+1] = a[j];
+                j--;
             }
+            a[j+1] = k;
         }
     }
 
@@ -117,3 +171,4 @@ public class A {
     }
 
 }
+

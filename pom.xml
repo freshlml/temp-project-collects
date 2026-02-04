@@ -8,21 +8,21 @@
         <version>2.7.0</version>
     </parent>
     <modules>
-        <module>temp-project-demo</module>
-        <module>temp-project-yui</module>
+        <module>temp-demo</module>
+        <module>temp-yui</module>
     </modules>
 
-    <groupId>com.temp</groupId>
-    <artifactId>temp-project-collects</artifactId>
+    <groupId>com.fresh.temp</groupId>
+    <artifactId>temp-common-parent</artifactId>
     <version>1.0.0</version>
     <packaging>pom</packaging>
 
-    <name>temp-project-collects</name>
-    <url>https://www.github.com/freshlml/temp-project-collects</url>
+    <name>temp-common-parent</name>
+    <url>https://www.github.com/freshlml/temp-common-parent</url>
     <licenses>
         <license>
             <name>freshlml</name>
-            <url>https://www.github.com/freshlml/temp-project-collects</url>
+            <url>https://www.github.com/freshlml/temp-common-parent</url>
         </license>
     </licenses>
     <developers>
@@ -34,7 +34,7 @@
         </developer>
     </developers>
     <scm>
-        <url>https://www.github.com/freshlml/temp-project-collects</url>
+        <url>https://www.github.com/freshlml/temp-common-parent</url>
     </scm>
 
     <properties>

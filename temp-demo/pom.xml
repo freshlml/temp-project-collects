@@ -5,14 +5,14 @@
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
-        <groupId>com.temp</groupId>
-        <artifactId>temp-project-collects</artifactId>
+        <groupId>com.fresh.temp</groupId>
+        <artifactId>temp-common-parent</artifactId>
         <version>1.0.0</version>
     </parent>
 
-    <groupId>com.demo</groupId>
-    <artifactId>temp-project-demo</artifactId>
-    <name>temp-project-demo</name>
+    <groupId>com.fresh.demo</groupId>
+    <artifactId>temp-demo</artifactId>
+    <name>temp-demo</name>
     <packaging>jar</packaging>
     <version>1.0.0</version>
 
@@ -25,15 +25,15 @@
     </repositories>
 
     <properties>
-        <fresh-common.version>1.0.0</fresh-common.version>
+        <fresh-core.version>1.0.0</fresh-core.version>
     </properties>
 
     <dependencies>
 
         <dependency>
             <groupId>com.fresh</groupId>
-            <artifactId>fresh-common</artifactId>
-            <version>${fresh-common.version}</version>
+            <artifactId>fresh-core</artifactId>
+            <version>${fresh-core.version}</version>
         </dependency>
 
         <dependency>
